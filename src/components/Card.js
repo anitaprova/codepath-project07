@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Card = (props) =>  {
   return (
     <div className="Card">
-      <Link to={"view/" + props.id} style={{ textDecoration: "none" }}>
+      <Link to={"view/" + props.id} style={{ textDecoration: "none", color:"inherit" }}>
         <Link to={"edit/" + props.id}>
           <img className="moreButton" alt="edit button" src={more} />
         </Link>

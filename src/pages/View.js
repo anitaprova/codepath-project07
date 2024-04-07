@@ -50,9 +50,9 @@ const View = (props) => {
   }
 
   return (
-    <div>
+    <div className="info-container">
       {posts && currentPost && (
-        <div>
+        <div className="info">
           <h1>
             Say Hi to{" "}
             <span style={{ color: currentPost.color }}>{currentPost.name}</span>

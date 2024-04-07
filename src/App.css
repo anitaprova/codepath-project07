@@ -3,15 +3,14 @@
   font-weight:100; 
   font-style:normal;
   font-size: calc(10px + 2vmin);
-  color: white;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.962);
   padding:20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-image: url('./assets/background.jpg');
 }
 
 img{
@@ -20,8 +19,8 @@ img{
 
 .header{
   width: 100%;
-  color:white;
   text-align: center;
+  color:white;
 }
 
 .headerBtn {
@@ -43,11 +42,11 @@ button {
   font-size: 15px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ec2222;
   color:white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #800000;
 }

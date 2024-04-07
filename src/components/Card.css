@@ -1,6 +1,6 @@
 .Card {
     backdrop-filter: blur(2px);
-    border: 1px solid rgba(153, 153, 153, 0.497);
+    border: 1px solid rgba(43, 43, 43, 0.497);
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -8,22 +8,22 @@
     margin-bottom: 25px;
     width: 400px;
     text-align: center;
+    background-color: white;
+    
 }
 
 .name {
-    color:white;
     padding-left:30px;
     font-size: 24px;
 }
 
 .speed {
-    color:white;
     margin-bottom: 20px;
     font-size: 20px;
 }
 
 .color{
-    color:white;
+    
     margin-bottom: 20px;
     font-size: 20px;
 }
