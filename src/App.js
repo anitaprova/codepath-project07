@@ -6,7 +6,7 @@ import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
 import View from "./pages/View";
 import { Link } from 'react-router-dom'
-
+import spaceship from './assets/spaceship.png';
 
 const App = () => {
   const posts = [
@@ -35,7 +35,10 @@ const App = () => {
   return (
     <div className="App">
       <div className="header">
-        <h1>ඞ Among Us</h1>
+        <h1>
+          ඞ Among Us <img src={spaceship} alt="logo" />
+        </h1>
+
         <Link to="/">
           <button className="headerBtn"> Crewmate Gallery </button>
         </Link>
