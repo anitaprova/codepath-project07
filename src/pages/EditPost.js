@@ -10,20 +10,20 @@ const EditPost = ({data}) => {
     const [post, setPost] = useState({id: null, name: "", speed: "", color: ""});
 
     const handleChange = (event) => {
-        const {name, value} = event.target;
-        setPost( (prev) => {
-            return {
-                ...prev,
-                [name]:value,
-            }
-        })
-    }
+      const { name, value } = event.target;
+      if (name === "name" || name === "speed" || name === "color") {
+        setPost((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
+      }
+    };
 
     const updatePost = async (event) => {
         event.preventDefault();
 
         await supabase
-          .from("Posts")
+          .from("Game")
           .update({
             name: post.name,
             speed: post.speed,
@@ -45,37 +45,63 @@ const EditPost = ({data}) => {
     return (
       <div>
         <form>
-          <label for="title">Title</label> <br />
+          <label htmlFor="name">Name</label> <br />
+          <input type="text" id="name" name="name" onChange={handleChange} />
+          <br />
+          <br />
+          <label htmlFor="speed">Speed</label>
+          <input type="text" id="speed" name="speed" onChange={handleChange} />
+          <br />
+          <br />
+          <label>Color</label> <br />
           <input
-            type="text"
-            id="title"
-            name="title"
-            value={post.title}
+            type="radio"
+            id="red"
+            name="color"
+            value="red"
             onChange={handleChange}
           />
-          <br />
-          <br />
-          <label for="author">Author</label>
-          <br />
+          <label htmlFor="red">Red</label> <br />
           <input
-            type="text"
-            id="author"
-            name="author"
-            value={post.author}
+            type="radio"
+            id="blue"
+            name="color"
+            value="blue"
             onChange={handleChange}
           />
-          <br />
-          <br />
-          <label for="description">Description</label>
-          <br />
-          <textarea
-            rows="5"
-            cols="50"
-            id="description"
-            value={post.description}
+          <label htmlFor="blue">Blue</label> <br />
+          <input
+            type="radio"
+            id="green"
+            name="color"
+            value="green"
             onChange={handleChange}
-          ></textarea>
-          <br />
+          />
+          <label htmlFor="green">Green</label> <br />
+          <input
+            type="radio"
+            id="black"
+            name="color"
+            value="black"
+            onChange={handleChange}
+          />
+          <label htmlFor="black">Black</label> <br />
+          <input
+            type="radio"
+            id="yellow"
+            name="color"
+            value="yellow"
+            onChange={handleChange}
+          />
+          <label htmlFor="yellow">Yellow</label> <br />
+          <input
+            type="radio"
+            id="orange"
+            name="color"
+            value="orange"
+            onChange={handleChange}
+          />
+          <label htmlFor="orange">Orange</label> <br />
           <input type="submit" value="Submit" onClick={updatePost} />
           <button className="deleteButton" onClick={deletePost}>
             Delete

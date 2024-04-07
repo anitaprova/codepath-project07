@@ -8,7 +8,6 @@ const CreatePost = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // Check if the name is one of the expected keys before updating the state
     if (name === "name" || name === "speed" || name === "color") {
       setPost((prev) => ({
         ...prev,
@@ -20,7 +19,6 @@ const CreatePost = () => {
   const createPost = async (event) => {
     event.preventDefault();
 
-    console.log("Post data:", post);
     await supabase
       .from("Game")
       .insert({
@@ -30,16 +28,20 @@ const CreatePost = () => {
       })
       .select();
 
-    window.location = "/read";
+    window.location = "/";
   };
 
   return (
     <div>
       <form>
         <label htmlFor="name">Name</label> <br />
-        <input type="text" id="name" name="name" onChange={handleChange} />
+        <input type="text" id="name" name="name" onChange={handleChange} />{" "}
+        <br />
+        <br />
         <label htmlFor="speed">Speed</label>
         <input type="text" id="speed" name="speed" onChange={handleChange} />
+        <br />
+        <br />
         <label>Color</label> <br />
         <input
           type="radio"
@@ -65,6 +67,30 @@ const CreatePost = () => {
           onChange={handleChange}
         />
         <label htmlFor="green">Green</label> <br />
+        <input
+          type="radio"
+          id="black"
+          name="color"
+          value="black"
+          onChange={handleChange}
+        />
+        <label htmlFor="black">Black</label> <br />
+        <input
+          type="radio"
+          id="yellow"
+          name="color"
+          value="yellow"
+          onChange={handleChange}
+        />
+        <label htmlFor="yellow">Yellow</label> <br />
+        <input
+          type="radio"
+          id="orange"
+          name="color"
+          value="orange"
+          onChange={handleChange}
+        />
+        <label htmlFor="orange">Orange</label> <br />
         <input type="submit" value="Submit" onClick={createPost} />
       </form>
     </div>

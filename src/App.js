@@ -4,7 +4,7 @@ import { useRoutes } from 'react-router-dom'
 import ReadPosts from './pages/ReadPosts'
 import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import { Link } from 'react-router-dom'
 
 
@@ -22,12 +22,12 @@ const App = () => {
 
   // Sets up routes
   let element = useRoutes([
+    // {
+    //   path: "/",
+    //   element: <Home/>,
+    // },
     {
       path: "/",
-      element: <Home/>,
-    },
-    {
-      path: "/read",
       element: <ReadPosts data={posts} />,
     },
     {
@@ -44,7 +44,7 @@ const App = () => {
     <div className="App">
       <div className="header">
         <h1>ඞ Among Us</h1>
-        <Link to="/read">
+        <Link to="/">
           <button className="headerBtn"> Crewmate Gallery </button>
         </Link>
         <Link to="/new">

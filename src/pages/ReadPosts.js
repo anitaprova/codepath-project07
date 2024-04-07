@@ -11,7 +11,6 @@ const ReadPosts = (props) => {
         const fetchPosts = async () => {
           const { data } = await supabase.from("Game").select();
 
-          // set state of posts
           setPosts(data);
         };
         fetchPosts();
